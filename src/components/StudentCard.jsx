@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function StudentCard(props) {
   // Support both passing individual props or a student object
@@ -78,6 +79,14 @@ function StudentCard(props) {
                 {showDetails ? 'Hide Details' : 'Show Details'}
               </button>
             </div>
+
+            {/* React Router Link (Navigates to Student Details Page) */}
+            <Link 
+              to={`/students/${id || 1}`} 
+              className="btn btn-outline-primary btn-sm w-100 mt-1"
+            >
+              <i className="bi bi-box-arrow-up-right me-1"></i> Open Router Profile
+            </Link>
 
             {/* Expanded Details Section */}
             {showDetails && (
